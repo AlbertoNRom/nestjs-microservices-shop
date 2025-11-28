@@ -16,5 +16,27 @@ steps:
         "push",
         "europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest",
       ]
+
+
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args:
+    - -c
+    - |
+     "europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest", -f ./orders-ms/Dockerfile.prod --platform=linux/amd64 --build-arg ORDERS_DB_URL=$$DATABASE_URL .
+  secretEnv: ['DATABASE_URL']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    [
+      'push',
+      'europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest',
+    ]
 options:
   logging: CLOUD_LOGGING_ONLY
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/10411646954/secrets/ORDERS_DB_URL/versions/1
+    env: 'DATABASE_URL'
