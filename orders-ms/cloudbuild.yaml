@@ -4,7 +4,7 @@ steps:
   args:
     - -c
     - |
-     "europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest", -f ./orders-ms/Dockerfile.prod --platform=linux/amd64 --build-arg ORDERS_DB_URL=$$DATABASE_URL .
+     "europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest", -f ./orders-ms/Dockerfile.prod --platform=linux/amd64 --build-arg ORDERS_DB_URL=$$DATABASE_URL ./orders-ms
   secretEnv: ['DATABASE_URL']
 
 - name: 'gcr.io/cloud-builders/docker'
