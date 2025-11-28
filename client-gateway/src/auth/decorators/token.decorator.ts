@@ -1,0 +1,14 @@
+import { createParamDecorator } from "@nestjs/common";
+import { ExecutionContext } from "@nestjs/common";
+import { InternalServerErrorException } from "@nestjs/common";
+
+export const Token = createParamDecorator(
+  (data: unknown, ctx: ExecutionContext) => {
+    const request = ctx.switchToHttp().getRequest();
+
+    if (!request.token) {
+      throw new InternalServerErrorException('Token not found in request');
+    }
+    return request.token;
+  },
+);

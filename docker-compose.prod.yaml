@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  client-gateway:
+    build:
+      context: ./client-gateway
+      dockerfile: Dockerfile.prod
+    image: europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/client-gateway:latest
+    ports:
+      - 3000:3000
+    environment:
+    - NATS_SERVERS=nats://nats-server:4222
+    - PORT=3000
+  nats-server:
+    image: nats:2.10-alpine
+    ports:
+      - "8222:8222"
+  products-ms:
+    build:
+      context: ./products-ms
+      dockerfile: Dockerfile.prod
+    image: europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/products-ms:latest
+    environment:
+      - NATS_SERVERS=nats://nats-server:4222
+      - PORT=3000
+      - DATABASE_URL=file:./dev.db
+  orders-ms:
+    build:
+      context: ./orders-ms
+      dockerfile: Dockerfile.prod
+      args:
+        DATABASE_URL: ${ORDERS_DB_URL}
+    image: europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/orders-ms:latest
+    environment:
+      - NATS_SERVERS=nats://nats-server:4222
+      - PORT=3000
+      - DATABASE_URL=${ORDERS_DB_URL}
+    depends_on:
+    - orders-db
+  orders-db:
+    image: postgres:16-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=orders_db
+    volumes:
+      - ./orders-db/postgres:/var/lib/postgresql/data
+  payments-ms:
+    build:
+      context: ./payments-ms
+      dockerfile: Dockerfile.prod
+    image: europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/payments-ms:latest
+    environment:
+      - NATS_SERVERS=nats://nats-server:4222
+      - PORT=3000
+      - STRIPE_SECRET=${STRIPE_SECRET}
+      - STRIPE_SUCCESS_URL=${STRIPE_SUCCESS_URL}
+      - STRIPE_CANCEL_URL=${STRIPE_CANCEL_URL}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+  auth-ms:
+    build:
+      context: ./auth-ms
+      dockerfile: Dockerfile.prod
+    image: europe-southwest1-docker.pkg.dev/nestjs-microservices-479616/images-registry/auth-ms:latest
+    environment:
+      - NATS_SERVERS=nats://nats-server:4222
+      - PORT=3000
+      - DATABASE_URL=${AUTH_DB_URL}
+      - JWT_SECRET=${JWT_SECRET}
