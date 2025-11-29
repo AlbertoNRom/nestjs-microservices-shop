@@ -1,0 +1,720 @@
+{
+  "yaakVersion": "2025.8.2",
+  "yaakSchema": 4,
+  "timestamp": "2025-11-29T08:39:14.669616",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_4NjjJpZ5zF",
+        "createdAt": "2025-03-28T10:08:34.518774",
+        "updatedAt": "2025-03-28T10:08:34.518774",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Yaak",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_Eia4cWWq4Y",
+        "createdAt": "2025-11-28T23:58:32.406295",
+        "updatedAt": "2025-11-28T23:58:32.406296",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Microservices - Health check",
+        "sortPriority": -1764374312404.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_TKrZ7WQrGy",
+        "createdAt": "2025-11-26T14:29:40.385915",
+        "updatedAt": "2025-11-26T14:29:40.385915",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Microservices - Auth",
+        "sortPriority": -1764167385088.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_TN4vYSwujm",
+        "createdAt": "2025-11-25T08:22:02.707004",
+        "updatedAt": "2025-11-25T08:22:02.707004",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Microservices - Payments",
+        "sortPriority": -1764058857472.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_aMrBdZ55jv",
+        "createdAt": "2025-11-23T10:18:10.462306",
+        "updatedAt": "2025-11-25T08:20:18.385526",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Microservices - Orders",
+        "sortPriority": -1763893051392.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_unZWzntZQ2",
+        "createdAt": "2025-11-21T13:34:53.374556",
+        "updatedAt": "2025-11-25T08:20:26.726171",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Microservices - Products",
+        "sortPriority": -1763732094976.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_PVNxrmmCaE",
+        "createdAt": "2025-11-28T23:59:28.676727",
+        "updatedAt": "2025-11-29T01:27:21.239906",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_Eia4cWWq4Y",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Webhook",
+        "sortPriority": -0.0002,
+        "url": "http://34.110.176.185/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_xrU7tx2dch",
+        "createdAt": "2025-11-28T23:58:59.160874",
+        "updatedAt": "2025-11-29T01:27:05.154854",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_Eia4cWWq4Y",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Client gateway",
+        "sortPriority": -0.0001,
+        "url": "http://136.110.216.58/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_zY9W4WBdk3",
+        "createdAt": "2025-11-26T15:03:20.755426",
+        "updatedAt": "2025-11-28T10:48:14.554249",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TKrZ7WQrGy",
+        "authentication": {
+          "token": "${[ response.body.path(request='rq_xxuMkP7cU8', path=b64'JC50b2tlbg', behavior='ttl', ttl='3600') ]}"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": ""
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "5Tv4xHC6Tk"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "TTyYksjEK2"
+          }
+        ],
+        "method": "GET",
+        "name": "Verify token",
+        "sortPriority": 4000.0021,
+        "url": "http://localhost:3000/api/auth/verify",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_xxuMkP7cU8",
+        "createdAt": "2025-11-26T15:03:09.909383",
+        "updatedAt": "2025-11-28T23:31:05.768355",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TKrZ7WQrGy",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"email\": \"alberto@gmail.com\",\n  \"password\": \"Alb3rt012345@\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "5Tv4xHC6Tk"
+          }
+        ],
+        "method": "POST",
+        "name": "Login",
+        "sortPriority": 4000.0011,
+        "url": "http://localhost:31703/api/auth/login",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_ZuhNxTKoqZ",
+        "createdAt": "2025-11-26T15:01:43.259071",
+        "updatedAt": "2025-11-26T15:05:28.453341",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TKrZ7WQrGy",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"name\": \"Alberto\",\n  \"email\": \"alberto@gmail.com\",\n  \"password\": \"Alb3rt012345@\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "5Tv4xHC6Tk"
+          }
+        ],
+        "method": "POST",
+        "name": "Register",
+        "sortPriority": 4000.0,
+        "url": "http://localhost:3000/api/auth/register",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_LQrxFwhTig",
+        "createdAt": "2025-11-25T08:34:52.641460",
+        "updatedAt": "2025-11-29T01:28:29.837224",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TN4vYSwujm",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "POST",
+        "name": "Payment webhook",
+        "sortPriority": 0.0012,
+        "url": "http://localhost:30765/payments",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_3syvWuMbX2",
+        "createdAt": "2025-11-25T08:34:12.262766",
+        "updatedAt": "2025-11-25T08:34:34.142420",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TN4vYSwujm",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Payment cancel",
+        "sortPriority": 0.0021999999999999997,
+        "url": "http://localhost:3003/payments/cancel",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_FUuaswnp7p",
+        "createdAt": "2025-11-25T08:33:58.426767",
+        "updatedAt": "2025-11-25T08:34:42.945605",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TN4vYSwujm",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Payment success",
+        "sortPriority": 0.0012,
+        "url": "http://localhost:3003/payments/success",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_VKaVoWrniX",
+        "createdAt": "2025-11-25T08:32:42.381469",
+        "updatedAt": "2025-11-25T18:16:40.431664",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_TN4vYSwujm",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"orderId\": \"XYZ123\"\n  \"currency\": \"usd\",\n  \"items\":[\n    {\n      \"name\": \"Teclado mecánico\",\n      \"price\": 80,\n      \"quantity\": 1\n    },\n    {\n      \"name\": \"Mouse\",\n      \"price\": 119.99,\n      \"quantity\": 1\n    }\n  ]\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "z5HY0v5RBh"
+          }
+        ],
+        "method": "POST",
+        "name": "Create payment session",
+        "sortPriority": 0.0001,
+        "url": "http://localhost:3003/payments/create-payment-session",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_288Bgskojy",
+        "createdAt": "2025-11-23T15:48:58.613227",
+        "updatedAt": "2025-11-23T15:57:52.625104",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_aMrBdZ55jv",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "form": [
+            {
+              "enabled": true,
+              "name": "status",
+              "value": "CANCELLED"
+            },
+            {
+              "enabled": true,
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "PATCH",
+        "name": "Change order status",
+        "sortPriority": 1000.0011,
+        "url": "http://localhost:3000/api/orders/id/12d4c1a2-8bc8-464d-b5dd-c19a36362acc",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "mcT6hhiGwe"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_tKhYzcw6om",
+        "createdAt": "2025-11-23T15:32:36.208057",
+        "updatedAt": "2025-11-24T20:42:23.716272",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_aMrBdZ55jv",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "GET",
+        "name": "Get orders by status",
+        "sortPriority": 0.0011,
+        "url": "http://localhost:3000/api/orders/CANCELLED",
+        "urlParameters": [
+          {
+            "enabled": false,
+            "name": "page",
+            "value": "1",
+            "id": "DfPxA6z0eX"
+          },
+          {
+            "enabled": false,
+            "name": "limit",
+            "value": "10",
+            "id": "BW6dBEFTxN"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "RIV2gDB0dc"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_FC7EajvPQc",
+        "createdAt": "2025-11-23T10:28:55.153312",
+        "updatedAt": "2025-11-23T10:28:55.153313",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_unZWzntZQ2",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "DELETE",
+        "name": "Delete product",
+        "sortPriority": 0.0055,
+        "url": "http://localhost:3000/api/products/5",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_AVi8posg8q",
+        "createdAt": "2025-11-23T10:28:55.151720",
+        "updatedAt": "2025-11-23T10:28:55.151720",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_unZWzntZQ2",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "form": [
+            {
+              "enabled": true,
+              "name": "price",
+              "value": "75.25"
+            },
+            {
+              "enabled": true,
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "PATCH",
+        "name": "Update product",
+        "sortPriority": 0.004499999999999999,
+        "url": "http://localhost:3000/api/products/4",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Xtj3Qj2gzQ",
+        "createdAt": "2025-11-23T10:28:55.149673",
+        "updatedAt": "2025-11-23T10:28:55.149674",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_unZWzntZQ2",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "GET",
+        "name": "Find product",
+        "sortPriority": 0.0033999999999999994,
+        "url": "http://localhost:3000/api/products/1",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "mcT6hhiGwe"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_3PZwvWKE9R",
+        "createdAt": "2025-11-23T10:28:55.147151",
+        "updatedAt": "2025-11-28T22:54:06.418302",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_unZWzntZQ2",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "GET",
+        "name": "Get products",
+        "sortPriority": 0.0023,
+        "url": "http://localhost:31703/api/products",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "page",
+            "value": "4",
+            "id": "DfPxA6z0eX"
+          },
+          {
+            "enabled": true,
+            "name": "limit",
+            "value": "10",
+            "id": "BW6dBEFTxN"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "tqGFDdNv0K"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_tgomwcgQAn",
+        "createdAt": "2025-11-23T10:18:22.694114",
+        "updatedAt": "2025-11-28T23:47:27.536560",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_aMrBdZ55jv",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"items\":[\n     {\n      \"productId\": 8,\n      \"quantity\": 1,\n      \"price\": 1000\n    },\n    {\n      \"productId\": 6,\n      \"quantity\": 1,\n      \"price\": 125\n    }\n  ]\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "iB22pSqY2H"
+          }
+        ],
+        "method": "POST",
+        "name": "Create order",
+        "sortPriority": 4000.0,
+        "url": "http://localhost:31703/api/orders",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "aSapJ3v0K5"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Q4ofjSjAtC",
+        "createdAt": "2025-11-21T15:02:30.218049",
+        "updatedAt": "2025-11-26T10:03:26.392838",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_aMrBdZ55jv",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "GET",
+        "name": "Find order",
+        "sortPriority": 1000.0001,
+        "url": "http://localhost:3000/api/orders/id/a4bdc428-5af3-4bfd-8360-8f6ff7f75192",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "mcT6hhiGwe"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_W3kYNAfE2A",
+        "createdAt": "2025-11-21T14:58:17.402899",
+        "updatedAt": "2025-11-28T23:25:05.690938",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_aMrBdZ55jv",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "i6qmMABAyh"
+          }
+        ],
+        "method": "GET",
+        "name": "Get orders",
+        "sortPriority": 0.0,
+        "url": "http://localhost:31703/api/orders",
+        "urlParameters": [
+          {
+            "enabled": false,
+            "name": "page",
+            "value": "3",
+            "id": "DfPxA6z0eX"
+          },
+          {
+            "enabled": false,
+            "name": "limit",
+            "value": "10",
+            "id": "BW6dBEFTxN"
+          },
+          {
+            "enabled": false,
+            "name": "status",
+            "value": "CANCELLED",
+            "id": "DJQ5mjIx47"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "KAknxBpAyT"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_nH5ADfn6rQ",
+        "createdAt": "2025-11-21T13:35:05.960696",
+        "updatedAt": "2025-11-22T17:34:14.657538",
+        "workspaceId": "wk_4NjjJpZ5zF",
+        "folderId": "fl_unZWzntZQ2",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "form": [
+            {
+              "enabled": true,
+              "name": "name",
+              "value": "Monitor"
+            },
+            {
+              "enabled": true,
+              "name": "price",
+              "value": "150.99"
+            },
+            {
+              "enabled": true,
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "application/x-www-form-urlencoded",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "id": "zbJ3QkQh4Q"
+          }
+        ],
+        "method": "POST",
+        "name": "Create product",
+        "sortPriority": 0.0,
+        "url": "http://localhost:3000/api/products",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "aSapJ3v0K5"
+          }
+        ]
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": []
+  }
+}
